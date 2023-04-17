@@ -1,0 +1,18 @@
+<table id="table2">
+    <tr>
+      <th>Thứ tự</th>
+      <th>Tên</th>
+      <th>Giá</th>
+      <th>Hạ Giá</th>
+    </tr>
+    <tr *ngFor="let trai of traiCay2; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{trai.ten}}</td>
+        <td>
+          <span [ngClass]="{'so-am': trai.gia < 0 , 'so-duong': trai.gia > 0 }">
+            {{trai.gia | currency:"VND" }}
+          </span>
+        </td>
+        <td>{{trai.haGia | onSale}}</td>
+      </tr>
+  </table>
